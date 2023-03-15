@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "joetech" {
   ]
    acl = "private"
    bucket = "bootcamp30-${random_integer.random_number.result}-joseph"
-    object_lock_enabled = true
+    # object_lock_enabled = true
     
      versioning {
     enabled = true
