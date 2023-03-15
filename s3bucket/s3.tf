@@ -13,18 +13,18 @@ resource "aws_s3_bucket" "joetech" {
   depends_on = [
     random_integer.random_number
   ]
-   acl = "private"
-   bucket = "bootcamp30-${random_integer.random_number.result}-joseph"
-    # object_lock_enabled = true
-    
-     versioning {
+  acl    = "private"
+  bucket = "bootcamp30-${random_integer.random_number.result}-joseph"
+  # object_lock_enabled = true
+
+  versioning {
     enabled = true
   }
-    
-    # tags = {
-    #   "Name" = bootcamp30-${ra}
-    # }
-  
+
+  # tags = {
+  #   "Name" = bootcamp30-${ra}
+  # }
+
 }
 resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
   bucket = aws_s3_bucket.joetech.id
